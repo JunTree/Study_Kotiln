@@ -9,4 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     // 주석을 달자//
+    //이제부터 코틀린 공부 시작//
+
 }
