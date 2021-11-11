@@ -55,9 +55,4 @@ val multiLineStringValue = """ 3개의 따옴표multiline
 string
 test 줄바꿈이나 특수문자까지 그대로 문자열로 사용 가능 """
 
-
-
-
-
-
 */
