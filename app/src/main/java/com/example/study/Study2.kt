@@ -1,4 +1,4 @@
-/*
+/*.
 형변환
 toByte()
 toShort()
