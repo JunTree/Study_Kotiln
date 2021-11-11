@@ -20,7 +20,7 @@ for(i in 'a'..'e'){
     print(i)
 }// 'a'부터 'e'까지 반복package
 
-흐름제어 연산자 
+흐름제어 연산자
 
 break,continue
 
