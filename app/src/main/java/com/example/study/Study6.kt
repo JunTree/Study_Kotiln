@@ -1,4 +1,4 @@
-/*
+package com.example.study/*
 고차함수 - 함수를 클래스에 만들어 낸 인스턴스처럼 취급하는 방법
 함수를 패러미터로 넘겨줄수도 있고, 결과값으로 반환 받을 수 있는 방법
 함수 이름 앞에 콜론을 두개 붙여준다. ex) b(::a) - 일반함수를 고차함수로 바꾸기
@@ -44,4 +44,70 @@ b가 호출한 람다함수
 일반적인 변수 선언처럼, 람다식도 데이터 타입을 명시할 수 있다.
 람다식의 경우 파라미터와 리턴값을 같는 함수이기 때문에 데이터 타입을 표현하기 까다롭다.
 파라미터를 리턴으로 표현할 수 있기 때문에 명시적이고 함수형 프로그래밍의 특징이다.
+
+
+
+오브젝트 사용
+fun main(){
+    println(Counter.cnt)
+
+    Counter.countUp()
+    Counter.countUp()
+
+    println(Counter.cnt)
+
+    Counter.clear()
+
+    println(Counter.cnt)
+}
+
+object Counter {
+    var cnt = 0
+
+    fun countUp(){
+        count++
+    }
+
+    fun clear(){
+        cnt = 0
+    }
+}
+
+출력예)
+0
+2
+0
+
+
+fun main(){
+    var a = FoodPoll("짜장")
+    var b = FoodPoll("짬뽕")
+
+    a.vote()
+    a.vote()
+
+    b.vote()
+    b.vote()
+    b.vote()
+
+    pritnln("${a.name} : ${a.cnt}")
+    pritnln("${b.name} : ${b.cnt}")
+    println("총계:${FoodPoll.total}")
+
+
+}
+class FoodPoll(val name: String) {
+    companion object{
+        var total = 0
+    }
+    var cnt = 0
+    fun vote(){
+        total++
+        cnt++
+    }
+}
+
+출력예) 짜장 : 2
+		짬뽕 : 3
+		총계 : 5
  */
