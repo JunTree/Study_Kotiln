@@ -56,4 +56,51 @@ class Cola: Drink(){
 콜라로 설거지를 합니다.
 콜라로 설거지를 합니다.
 
+제너릭(Generic) - 클래스나 함수에서 사용하는 자료형을 외부에서 지정할 수 있는 기능
+
+fun main(){
+    UsingGeneric(A()).doShouting()
+    UsingGeneric(B()).doShouting()
+    UsingGeneric(C()).doShouting()
+
+    doShouting(B()) // 캐스팅 없이 B객체 그대로 함수에서 사용
+}
+
+fun <T: A> doShouting(t : T){
+    t.shout()
+}
+open class A{
+    open fun shout(){
+        println("A가 소리칩니다.")
+    }
+}
+
+class B: A(){
+    override fun shout(){
+        println("B가 소리칩니다.")
+    }
+}
+
+class C: A(){
+    override fun shout(){
+        println("C가 소리칩니다.")
+    }
+}
+
+class UsingGeneric<T : A> (val t: T){
+    fun doShouting(){
+        t.shout()
+    }
+}
+
+출력예)
+A가 소리칩니다.
+B가 소리칩니다.
+C가 소리칩니다.
+B가 소리칩니다.
+
+
+
+
+
  */
