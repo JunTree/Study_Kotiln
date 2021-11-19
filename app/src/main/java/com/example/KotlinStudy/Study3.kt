@@ -169,4 +169,4 @@ class Cat (name:String, age:Int) : Animal(name,age,'고양이'){
 		저는 고양이 나비이고, 1살 입니다.
 		야옹야옹
 
- */
+ .*/
