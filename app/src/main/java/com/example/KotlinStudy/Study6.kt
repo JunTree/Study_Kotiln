@@ -1,4 +1,4 @@
-package com.example.study/*
+package com.example.KotlinStudy/*
 고차함수 - 함수를 클래스에 만들어 낸 인스턴스처럼 취급하는 방법
 함수를 패러미터로 넘겨줄수도 있고, 결과값으로 반환 받을 수 있는 방법
 함수 이름 앞에 콜론을 두개 붙여준다. ex) b(::a) - 일반함수를 고차함수로 바꾸기
