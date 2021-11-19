@@ -55,5 +55,92 @@ fun main(){
 [6,4,8,1]
 [1,4,6,8]
 
+문자열 함수
+
+
+fun main(){
+    val test1 = "Test.Kotlin.String"
+
+    println(test1.length) //문자열 길이
+
+    println(test1.toLowerCase())// 소문자로 변환
+    println(test2.toUpperCase())// 대문자로 변환
+
+    var test2 = test1.split(".") // .을기준으로 나눔
+    println(test2)
+
+    println(test2.joinToString()) // 문자열을 그냥 합침
+    println(test2.joinToString("-")) // -을 넣어서 합쳐짐
+
+    println(test1.substring(5..10)) // 문자열 이부분만 사용 5부터 10까지
+}
+
+출력 예)
+18
+test.kotlin.string
+TEST.KOTLIN.STRING
+[Test, Kotlin, String]
+Test, Kotlin, String
+Test-Kotlin-String
+Kotiln
+
+fun main(){
+    val nullString: String? = null
+    val emptyString = ""
+    val blankString = " "
+    val normalString = "A"
+
+    println(nullString.isNullOrEmpty())
+    println(emptyString.isNullOrEmpty())
+    println(blankString.isNullOrEmpty())
+    println(normalString.isNullOrEmpty()) // 널이거나 비어있다면 True를 반환, 공백 문자열은 false
+
+    println()
+
+    println(nullString.isNullOrBlank())
+    println(emptyString.isNullOrBlank())
+    println(blankString.isNullOrBlank())
+    println(normalString.isNullOrBlank()) // 널이거나 비어있다면 True를 반환, 공백문자열도 True
+
+
+}
+
+출력예)
+true
+true
+false
+false
+
+true
+true
+true
+false
+
+fun main(){
+    var test3 = "kotlin.kt"
+    var test4 = "java.java"
+
+    println(test3.startsWith("java"))
+    println(test4.startsWith("java"))// 지정한 문자열로 시작하면 True를 반환
+    println()
+    println(test3.endsWith(".kt"))
+    println(test4.endsWith(".kt")) // 지정한 문자열로 끝나면 True를 반환
+    println()
+    println(test3.contains("lin"))
+    println(test4.contains("lin")) // 지정한 문자열이 포함되어 있으면 True를 반환
+}
+
+출력예)
+false
+true
+
+true
+false
+
+true
+false
+
+
+
 
  */
