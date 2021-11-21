@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /*
 클래스의 다형성
 - 클래스의 상속관계에서 오는 인스턴스의 호환성을 적극 활용가능
