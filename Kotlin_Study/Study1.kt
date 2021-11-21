@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /* 변수와 자료형..
 
 var == 일반적으로 통용되는 변수, 언제든지 읽기 쓰기가 가능하다.
