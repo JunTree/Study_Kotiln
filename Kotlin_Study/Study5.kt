@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /*
 
 프로젝트 - 여러개의 모듈 혹은 라이브러리 모듈을 붙이는 것
