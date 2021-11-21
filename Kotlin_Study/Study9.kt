@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /*
 클래스 컬렉션 - 클래스list, 클래스set, 클래스map
 
