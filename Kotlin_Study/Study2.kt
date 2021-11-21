@@ -1,4 +1,5 @@
-/*.
+package com.example.KotlinStudy
+/*
 형변환
 toByte()
 toShort()
