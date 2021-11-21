@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /*
 옵저버 패턴
 이벤트가 일어날 때 반응하는 패턴
