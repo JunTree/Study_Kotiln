@@ -1,3 +1,4 @@
+package com.example.KotlinStudy
 /*
 ?. - null safe operator
 참조 연산자를 실행하기 전에 먼저 객체가 null인지 확인하고 null이라면 구문을 실행하지 않음
