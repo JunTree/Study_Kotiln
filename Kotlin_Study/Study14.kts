@@ -73,4 +73,76 @@ true
 2
 
 
+associateBy - 아이템에서 key를 추출하여 map으로 변환하는 함수
+
+ex) 클래스 속성 name, birthYear
+collection.associateBy{it.name} //  name이 key로 map으로 추출
+
+groupBy - key 가 같은 아이템끼리 배열로 묶어 map으로 만드는 함수
+ex) collection.groupBy{it.birthYear}
+
+partition -  아이템에 조건을 걸어 두개의 컬렉션으로 나누어 줌
+ex) collection.partition{it.birthYear > 2002}  컬렉션을 ture false에 맞춰 나눔
+// Pair 클래스로 반환, 아이템을 first, second로 불러와야함
+
+
+fun main(){
+    data class Person(val name: String, val birthYear: Int)
+
+    val personList = listOf(Person("유나", 1992),
+                            Person("조이", 1996),
+                            Person("츄", 1999),
+                            Person("유나", 2003))
+    println(personList.associateBy{it.birthYear}) // birthYear을 키로 map을 형성
+    println(personList.groupBy{ it.name}) // name을 키로 묶음
+
+    val (over98, under98) = personList.pArtition {it.birthYear > 1998} // 1998보다 크면 over98(true) 작으면 under98(false)로 리스트를 나눔
+    println(over98)
+    println(under98)
+}
+출력 예)
+{1992 =Person(name=유나, birthYear=1992), 1996=Person(name=조이, birthYear=1996), 1999=Person(name=츄, birthYear=1999), 2003=Person(name=유나, birthYear=2003)}
+{유나=[Person(name=유나,birthYear=1992), Person(name=유나, birthYear=2003)], 조이=[Person(name=조이, birthYear=1996)], 츄=[Person(name=츄, birthYear=2003)]}
+[Person(name=츄, birthYear=1999), Person(name=유나, birthYear=2003)]
+[Person(name=유나, birthYear=1992), Person(name=조이, birthYear=1996)]
+
+
+flatMap - 아이템마다 만들어진 컬렉션을 합쳐서 반환하는 함수
+
+ex) collection.faltMap{
+    lsitOf(it*3, it+3)// ex)[2,3] --> [6,5,9,6]
+}
+getOrElse - 인덱스 위치에 아이템이 있으면 아이템을, 없으면 지정한 기본값 반환하는 함수
+
+ex) collection.getOrElse(1){50} // ex)[6,5,9,6] index1은 5
+	collection.getOrElse(8){50} // ex)[6,5,9,6] index8은 없다 그러므로 기본값(중괄호안의 값) 50을 반환
+
+zip - 컬렉션 두 개의 아이템을 1:1로 매칭하여 새 컬렉션을 만들어줌
+	  pair 클래스의 객체로 만들어 리스트에 넣어 반환해줌 !! **이때 결과 list의 아이템의 갯수는 더 작은 컬렉션을 따라가게 된다. ***
+
+ex) collectionA zip collectionB // collectionA =[a,b,c,d] collectionB= [1,2,3,4]
+	pair(a,1), pair(b,2), pair(c,3), pair(d,4)
+
+
+fun main(){
+    val numbers = listOf(-3, 7, 2, -10, 1)
+
+    println(numbers.flatMap{ listOf(it*10, it+10) }) // [(-3*10),(-3+10)...(1*10),(1+10)]
+
+    println(numbers.getOrElse(1){50})// 1인덱스 값이 있다면 값, 없다면 50
+    println(numbers.getOrElse(10){50})// 10인덱스 값이 있다면 값, 없다면 50
+
+    val names = listOf("A","B","C","D")
+
+    println(names zip numbers) // names의 값과 numbers의 값을 하나의 객체로 묶는다. names의 아이템갯수가 더 적으므로 4개까지만 만든다.
+
+
+}
+
+출력예)
+[-30, 7, 70, 17, 20, 12, -100, 0, 10, 11]
+7
+50
+[(A,-3), (B,7), (C,2), (D,-10)]
+
  */
